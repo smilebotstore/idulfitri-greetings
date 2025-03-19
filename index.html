@@ -1,61 +1,35 @@
 <!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Selamat Hari Raya Idulfitri</title>
 </head>
 <body style="background-color: green; text-align: center;">
 
-    <!-- Barisan ketupat atas -->
-    <div>
-        <img src="ketupat.png" width="100">
-        <img src="ketupat.png" width="100">
-        <img src="ketupat.png" width="100">
-        <img src="ketupat.png" width="100">
-        <img src="ketupat.png" width="100">
+    <div style="display: inline-block; background-color: white; padding: 20px; border-radius: 10px; position: relative; width: 80%; max-width: 400px;">
+        <img src="ketupat.png" style="width: 50px; position: absolute; top: -20px; left: -20px;">
+        <img src="ketupat.png" style="width: 50px; position: absolute; top: -20px; right: -20px;">
+        <img src="ketupat.png" style="width: 50px; position: absolute; bottom: -20px; left: -20px;">
+        <img src="ketupat.png" style="width: 50px; position: absolute; bottom: -20px; right: -20px;">
+        
+        <h1 id="title" style="color: green;">Selamat Hari Raya Idulfitri</h1>
+        <p>Maaf Lahir Dan Batin</p>
     </div>
 
-    <!-- Barisan ketupat tengah -->
-    <div>
-        <img src="ketupat.png" width="100">
-        <img src="ketupat.png" width="100">
-        <img src="ketupat.png" width="100">
-        <img src="ketupat.png" width="100">
-        <img src="ketupat.png" width="100">
-    </div>
-
-    <!-- Barisan ketupat bawah -->
-    <div>
-        <img src="ketupat.png" width="100">
-        <img src="ketupat.png" width="100">
-        <img src="ketupat.png" width="100">
-        <img src="ketupat.png" width="100">
-        <img src="ketupat.png" width="100">
-    </div>
-
-    <!-- Tempat teks -->
-    <div style="background-color: white; width: 80%; margin: 20px auto; padding: 20px; border-radius: 10px;">
-        <h1 id="judul">Selamat Hari Raya Idulfitri</h1>
-        <h2>Maaf Lahir Dan Batin</h2>
-    </div>
-
-    <!-- Script animasi teks naik turun -->
     <script>
-        let judul = document.getElementById("judul");
-        let posisi = 0;
-        let naik = true;
+        let title = document.getElementById("title");
+        let position = 0;
+        let direction = 1;
 
-        setInterval(() => {
-            if (naik) {
-                posisi += 2;
-                if (posisi >= 10) naik = false;
-            } else {
-                posisi -= 2;
-                if (posisi <= 0) naik = true;
+        function animateTitle() {
+            position += direction;
+            if (position > 10 || position < 0) {
+                direction *= -1;
             }
-            judul.style.marginTop = posisi + "px";
-        }, 100);
+            title.style.marginTop = position + "px";
+            requestAnimationFrame(animateTitle);
+        }
+
+        animateTitle();
     </script>
 
 </body>
