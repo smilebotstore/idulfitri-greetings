@@ -1,35 +1,78 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <title>Selamat Idulfitri</title>
-</head>
-<body style="background-color: green; text-align: center; margin: 0;">
-    <div style="background-color: white; margin: auto; width: 80%; padding: 20px; position: relative;">
-        <!-- Ketupat Kiri -->
-        <img src="ketupat.png" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%);">
-        <img src="ketupat.png" style="position: absolute; left: 10px; bottom: 10px;">
-
-        <!-- Teks Utama -->
-        <h1 style="color: green; font-size: 24px; animation: naikTurun 1.5s infinite alternate;">
-            Selamat Hari Raya Idulfitri
-        </h1>
-        
-        <!-- Teks Maaf Lahir dan Batin (Bold & Hitam) -->
-        <p style="font-weight: bold; color: black; font-size: 16px;">
-            Maaf Lahir Dan Batin
-        </p>
-
-        <!-- Ketupat Kanan -->
-        <img src="ketupat.png" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%);">
-        <img src="ketupat.png" style="position: absolute; right: 10px; bottom: 10px;">
-    </div>
-
-    <!-- Animasi Naik Turun -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Hari Raya Idul Fitri</title>
     <style>
-        @keyframes naikTurun {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(10px); }
+        body {
+            background-color: #2fac66;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            position: relative;
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .animated-text {
+            color: #2fac66;
+            font-size: 24px;
+            font-weight: bold;
+            animation: bounce 1.5s infinite;
+        }
+
+        p {
+            color: #555;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        .ketupat {
+            width: 40px;
+            height: 40px;
+            background: yellow;
+            position: absolute;
+            transform: rotate(45deg);
+        }
+
+        .ketupat1 { top: -30px; left: -30px; }
+        .ketupat2 { top: -30px; right: -30px; }
+        .ketupat3 { bottom: -30px; left: -30px; }
+        .ketupat4 { bottom: -30px; right: -30px; }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
     </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1 class="animated-text">Selamat Hari Raya Idul Fitri</h1>
+            <p>Mohon Maaf Lahir dan Batin</p>
+        </div>
+        <div class="ketupat ketupat1"></div>
+        <div class="ketupat ketupat2"></div>
+        <div class="ketupat ketupat3"></div>
+        <div class="ketupat ketupat4"></div>
+    </div>
 </body>
 </html>
