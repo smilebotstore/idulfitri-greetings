@@ -3,76 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Selamat Hari Raya Idul Fitri</title>
-    <style>
-        body {
-            background-color: #2fac66;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        .container {
-            position: relative;
-            width: 90%;
-            max-width: 600px;
-            text-align: center;
-        }
-
-        .card {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            position: relative;
-            z-index: 1;
-        }
-
-        .animated-text {
-            color: #2fac66;
-            font-size: 24px;
-            font-weight: bold;
-            animation: bounce 1.5s infinite;
-        }
-
-        p {
-            color: #555;
-            font-size: 18px;
-            margin-top: 10px;
-        }
-
-        .ketupat {
-            width: 40px;
-            height: 40px;
-            background: yellow;
-            position: absolute;
-            transform: rotate(45deg);
-        }
-
-        .ketupat1 { top: -30px; left: -30px; }
-        .ketupat2 { top: -30px; right: -30px; }
-        .ketupat3 { bottom: -30px; left: -30px; }
-        .ketupat4 { bottom: -30px; right: -30px; }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-    </style>
+    <title>Selamat Hari Raya Idulfitri</title>
 </head>
-<body>
-    <div class="container">
-        <div class="card">
-            <h1 class="animated-text">Selamat Hari Raya Idul Fitri</h1>
-            <p>Mohon Maaf Lahir dan Batin</p>
-        </div>
-        <div class="ketupat ketupat1"></div>
-        <div class="ketupat ketupat2"></div>
-        <div class="ketupat ketupat3"></div>
-        <div class="ketupat ketupat4"></div>
+<body style="background-color: green; text-align: center;">
+
+    <!-- Barisan ketupat atas -->
+    <div>
+        <img src="ketupat.png" width="100">
+        <img src="ketupat.png" width="100">
+        <img src="ketupat.png" width="100">
+        <img src="ketupat.png" width="100">
+        <img src="ketupat.png" width="100">
     </div>
+
+    <!-- Barisan ketupat tengah -->
+    <div>
+        <img src="ketupat.png" width="100">
+        <img src="ketupat.png" width="100">
+        <img src="ketupat.png" width="100">
+        <img src="ketupat.png" width="100">
+        <img src="ketupat.png" width="100">
+    </div>
+
+    <!-- Barisan ketupat bawah -->
+    <div>
+        <img src="ketupat.png" width="100">
+        <img src="ketupat.png" width="100">
+        <img src="ketupat.png" width="100">
+        <img src="ketupat.png" width="100">
+        <img src="ketupat.png" width="100">
+    </div>
+
+    <!-- Tempat teks -->
+    <div style="background-color: white; width: 80%; margin: 20px auto; padding: 20px; border-radius: 10px;">
+        <h1 id="judul">Selamat Hari Raya Idulfitri</h1>
+        <h2>Maaf Lahir Dan Batin</h2>
+    </div>
+
+    <!-- Script animasi teks naik turun -->
+    <script>
+        let judul = document.getElementById("judul");
+        let posisi = 0;
+        let naik = true;
+
+        setInterval(() => {
+            if (naik) {
+                posisi += 2;
+                if (posisi >= 10) naik = false;
+            } else {
+                posisi -= 2;
+                if (posisi <= 0) naik = true;
+            }
+            judul.style.marginTop = posisi + "px";
+        }, 100);
+    </script>
+
 </body>
 </html>
