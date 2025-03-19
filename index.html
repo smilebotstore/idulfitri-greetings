@@ -1,37 +1,25 @@
 <!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Selamat Hari Raya Idulfitri</title>
 </head>
-<body style="background-color: green; margin: 0; display: flex; align-items: center; justify-content: center; height: 100vh; text-align: center;">
+<body style="margin: 0; background-color: green; display: flex; justify-content: center; align-items: center; height: 100vh; text-align: center;">
 
-    <div style="background-color: white; padding: 20px; border-radius: 10px; width: 90%; max-width: 400px; position: relative;">
-        <img src="ketupat.png" style="width: 50px; position: absolute; top: -20px; left: -20px;">
-        <img src="ketupat.png" style="width: 50px; position: absolute; top: -20px; right: -20px;">
-        <img src="ketupat.png" style="width: 50px; position: absolute; bottom: -20px; left: -20px;">
-        <img src="ketupat.png" style="width: 50px; position: absolute; bottom: -20px; right: -20px;">
-
-        <h1 id="title" style="color: green; margin: 0;">Selamat Hari Raya Idulfitri</h1>
-        <p style="margin-top: 10px;">Maaf Lahir Dan Batin</p>
+    <div style="background-color: white; padding: 20px; width: 90%; max-width: 600px; position: relative;">
+        <img src="ketupat.png" style="position: absolute; left: -50px; top: 50%; transform: translateY(-50%);" width="50">
+        <img src="ketupat.png" style="position: absolute; right: -50px; top: 50%; transform: translateY(-50%);" width="50">
+        
+        <h1 style="color: green; animation: naikTurun 2s infinite alternate;">Selamat Hari Raya Idulfitri</h1>
+        <p style="color: black;">Maaf Lahir Dan Batin</p>
     </div>
 
-    <script>
-        let title = document.getElementById("title");
-        let position = 0;
-        let direction = 1;
-
-        function animateTitle() {
-            position += direction;
-            if (position > 10 || position < 0) {
-                direction *= -1;
-            }
-            title.style.transform = "translateY(" + position + "px)";
-            requestAnimationFrame(animateTitle);
+    <style>
+        @keyframes naikTurun {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(10px); }
         }
-
-        animateTitle();
-    </script>
+    </style>
 
 </body>
 </html>
