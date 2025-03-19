@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Selamat Hari Raya Idulfitri</title>
 </head>
-<body style="background-color: green; text-align: center;">
+<body style="background-color: green; margin: 0; display: flex; align-items: center; justify-content: center; height: 100vh; text-align: center;">
 
-    <div style="display: inline-block; background-color: white; padding: 20px; border-radius: 10px; position: relative; width: 80%; max-width: 400px;">
+    <div style="background-color: white; padding: 20px; border-radius: 10px; width: 90%; max-width: 400px; position: relative;">
         <img src="ketupat.png" style="width: 50px; position: absolute; top: -20px; left: -20px;">
         <img src="ketupat.png" style="width: 50px; position: absolute; top: -20px; right: -20px;">
         <img src="ketupat.png" style="width: 50px; position: absolute; bottom: -20px; left: -20px;">
         <img src="ketupat.png" style="width: 50px; position: absolute; bottom: -20px; right: -20px;">
-        
-        <h1 id="title" style="color: green;">Selamat Hari Raya Idulfitri</h1>
-        <p>Maaf Lahir Dan Batin</p>
+
+        <h1 id="title" style="color: green; margin: 0;">Selamat Hari Raya Idulfitri</h1>
+        <p style="margin-top: 10px;">Maaf Lahir Dan Batin</p>
     </div>
 
     <script>
@@ -25,7 +26,7 @@
             if (position > 10 || position < 0) {
                 direction *= -1;
             }
-            title.style.marginTop = position + "px";
+            title.style.transform = "translateY(" + position + "px)";
             requestAnimationFrame(animateTitle);
         }
 
