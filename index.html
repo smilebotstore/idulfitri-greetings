@@ -1,171 +1,152 @@
 <!DOCTYPE html>
-
 <html lang="id">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Smel Store Lebaran</title>
-
+    <title>Idulfitri Greetings</title>
     <style>
-
         body {
-
             margin: 0;
-
             font-family: Arial, sans-serif;
-
         }
 
+        /* Navigation Menu */
         .navbar {
-
             background-color: black;
-
             color: white;
-
-            padding: 15px;
-
             display: flex;
-
             justify-content: space-between;
-
-            align-items: center;
-
+            padding: 15px 20px;
         }
 
-        .navbar a {
-
-            color: white;
-
-            text-decoration: none;
-
-            margin: 0 15px;
-
-            font-weight: bold;
-
-        }
-
-        .navbar a:hover {
-
-            text-decoration: underline;
-
-        }
-
-        .content {
-
-            padding: 20px;
-
-            text-align: center;
-
-        }
-
-        .home {
-
-            background-color: green;
-
-            height: 100vh;
-
-            color: white;
-
+        .nav-links {
+            list-style: none;
+            padding: 0;
             display: flex;
-
-            justify-content: center;
-
-            align-items: center;
-
-            font-size: 24px;
-
-            font-weight: bold;
-
         }
 
-        .about {
+        .nav-links li {
+            margin: 0 15px;
+        }
 
-            background-color: black;
-
+        .nav-links a {
             color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
 
-            padding: 20px;
-
-            display: none;
-
+        /* Home Section */
+        .home {
+            background-color: #4CAF50; /* Warna hijau */
             height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
 
+        .card {
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+            width: 80%;
+            max-width: 400px;
+        }
+
+        .title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #2E7D32;
+            animation: naikTurun 0.6s infinite alternate ease-in-out;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            font-weight: bold;
+            color: black;
+        }
+
+        .ketupat {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+        }
+
+        .top-left { top: -20px; left: -20px; }
+        .top-right { top: -20px; right: -20px; }
+        .bottom-left { bottom: -20px; left: -20px; }
+        .bottom-right { bottom: -20px; right: -20px; }
+
+        @keyframes naikTurun {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(10px); }
+        }
+
+        /* About Section */
+        .about {
+            background-color: black;
+            color: white;
+            height: 100vh;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
         }
 
         .about p {
-
-            margin: 10px 0;
-
-            font-size: 18px;
-
+            font-size: 20px;
         }
 
-        .about .bold {
-
+        .bold {
             font-weight: bold;
-
         }
-
     </style>
-
 </head>
-
 <body>
 
+    <!-- Navigation -->
+    <nav class="navbar">
+        <span>Smel Store Lebaran</span>
+        <ul class="nav-links">
+            <li><a href="#" onclick="showHome()">Home</a></li>
+            <li><a href="#" onclick="showAbout()">About</a></li>
+        </ul>
+    </nav>
 
-
-    <div class="navbar">
-
-        <div>Smel Store Lebaran</div>
-
-        <div>
-
-            <a href="#" onclick="showSection('home')">Home</a>
-
-            <a href="#" onclick="showSection('about')">About</a>
-
+    <!-- Home Section -->
+    <div class="home" id="home">
+        <div class="card">
+            <img src="ketupat.png" class="ketupat top-left">
+            <img src="ketupat.png" class="ketupat top-right">
+            <img src="ketupat.png" class="ketupat bottom-left">
+            <img src="ketupat.png" class="ketupat bottom-right">
+            <p class="title">Selamat Hari Raya Idul Fitri</p>
+            <p class="subtitle">Mohon Maaf Lahir dan Batin</p>
         </div>
-
     </div>
 
-
-
-    <div id="home" class="content home">
-
-        Selamat Hari Raya Idul Fitri
-
-    </div>
-
-
-
-    <div id="about" class="content about">
-
-        <p class="bold">● Creator Website: MFS</p>
-
+    <!-- About Section -->
+    <div class="about" id="about">
+        <p><span class="bold">● Creator Website:</span> MFS</p>
         <p>Website Ini dibuat Spesial Untuk Merayakan Idul Fitri</p>
-
     </div>
-
-
 
     <script>
-
-        function showSection(section) {
-
-            document.getElementById("home").style.display = (section === "home") ? "flex" : "none";
-
-            document.getElementById("about").style.display = (section === "about") ? "block" : "none";
-
+        function showHome() {
+            document.getElementById("home").style.display = "flex";
+            document.getElementById("about").style.display = "none";
         }
 
+        function showAbout() {
+            document.getElementById("home").style.display = "none";
+            document.getElementById("about").style.display = "flex";
+        }
     </script>
 
-
-
 </body>
-
 </html>
