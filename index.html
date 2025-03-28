@@ -6,12 +6,44 @@
     <title>Idulfitri Greetings</title>
     <style>
         body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navigation Menu */
+        .navbar {
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 20px;
+        }
+
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        /* Home Section */
+        .home {
             background-color: #4CAF50; /* Warna hijau */
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
+            flex-direction: column;
+            text-align: center;
         }
 
         .card {
@@ -38,10 +70,9 @@
             color: black;
         }
 
-        /* Gambar ketupat di sudut */
         .ketupat {
             position: absolute;
-            width: 40px; /* Sesuaikan ukuran */
+            width: 40px;
             height: 40px;
         }
 
@@ -50,22 +81,68 @@
         .bottom-left { bottom: -20px; left: -20px; }
         .bottom-right { bottom: -20px; right: -20px; }
 
-        /* Animasi naik turun */
         @keyframes naikTurun {
             0% { transform: translateY(0); }
             100% { transform: translateY(10px); }
         }
+
+        /* About Section */
+        .about {
+            background-color: black;
+            color: white;
+            height: 100vh;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+        }
+
+        .about p {
+            font-size: 20px;
+        }
     </style>
 </head>
 <body>
-    <div class="card">
-        <img src="ketupat.png" class="ketupat top-left">
-        <img src="ketupat.png" class="ketupat top-right">
-        <img src="ketupat.png" class="ketupat bottom-left">
-        <img src="ketupat.png" class="ketupat bottom-right">
 
-        <p class="title">Selamat Hari Raya Idul Fitri</p>
-        <p class="subtitle">Mohon Maaf Lahir dan Batin</p>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <span>Idulfitri Greetings</span>
+        <ul class="nav-links">
+            <li><a href="#" onclick="showHome()">Home</a></li>
+            <li><a href="#" onclick="showAbout()">About</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <div class="home" id="home">
+        <div class="card">
+            <img src="ketupat.png" class="ketupat top-left">
+            <img src="ketupat.png" class="ketupat top-right">
+            <img src="ketupat.png" class="ketupat bottom-left">
+            <img src="ketupat.png" class="ketupat bottom-right">
+            <p class="title">Selamat Hari Raya Idul Fitri</p>
+            <p class="subtitle">Mohon Maaf Lahir dan Batin</p>
+        </div>
     </div>
+
+    <!-- About Section -->
+    <div class="about" id="about">
+        <p>● Creator Website : MFS</p>
+        <p>Website Ini dibuat Spesial Untuk Merayakan Idul Fitri</p>
+    </div>
+
+    <script>
+        function showHome() {
+            document.getElementById("home").style.display = "flex";
+            document.getElementById("about").style.display = "none";
+        }
+
+        function showAbout() {
+            document.getElementById("home").style.display = "none";
+            document.getElementById("about").style.display = "flex";
+        }
+    </script>
+
 </body>
 </html>
