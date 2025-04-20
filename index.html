@@ -206,7 +206,6 @@
       opacity: 0.8;
     }
 
-    /* Dropdown */
     .dropdown {
       position: fixed;
       top: 20px;
@@ -250,6 +249,17 @@
 
     .dropdown-menu a:hover {
       text-decoration: underline;
+    }
+
+    /* Tambahan: Hilangkan efek biru saat klik/tap tombol dan link */
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+      outline: none;
+    }
+
+    button:focus, a:focus {
+      outline: none;
+      box-shadow: none;
     }
   </style>
 </head>
